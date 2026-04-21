@@ -1,4 +1,4 @@
-# 👶 Baby Care App
+# Baby Care App
 
 ## Overview
 
@@ -10,27 +10,27 @@ The system is built as a client-server application with authentication and prote
 
 ## Features
 
-### 👶 Baby Logs Management
+### Baby Logs Management
 - Create, read, update, and delete baby logs
 - Track feeding, sleep, and symptoms
 - Logs are linked to authenticated users
 
-### 📅 Activities Management
+### Activities Management
 - Add and delete activities (reminders & appointments)
 - View scheduled activities
 - (Edit functionality not yet implemented)
 
-### 📊 Statistics Dashboard
+### Statistics Dashboard
 - Daily overview of baby logs
 - Weekly statistics visualization
 - Monthly trend analysis
 - Data grouped and calculated from database
 
-### 🌤 Weather Integration
+### Weather Integration
 - Real-time weather data using WeatherAPI
 - Displays current weather for user location (Bihać)
 
-### 🔐 Authentication
+### Authentication
 - User registration and login system
 - JWT-based authentication
 - Token stored in localStorage
@@ -72,7 +72,7 @@ The application follows a client-server architecture:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```bash
 NTIP-main/
@@ -100,7 +100,7 @@ NTIP-main/
 └── README.md
 ```
 
-## 🚀 Installation
+## Installation
 
 ### Backend
 ```bash
@@ -130,7 +130,7 @@ http://localhost:3000
 
 ---
 
-## 🗄 Database
+## Database
 
 SQLite database includes:
 - users
@@ -141,7 +141,7 @@ Database initializes automatically on server start.
 
 ---
 
-## 🔌 API Overview
+## API Overview
 
 ### Auth
 - `POST /api/auth/register`
@@ -164,7 +164,7 @@ Database initializes automatically on server start.
 
 ---
 
-## 🔐 Authentication Flow
+## Authentication Flow
 
 - JWT token generated on login  
 - Stored in `localStorage`  
@@ -173,13 +173,13 @@ Database initializes automatically on server start.
 
 ---
 
-## 🌤 External Service
+## External Service
 
 Weather data is fetched from **WeatherAPI** and displayed in dashboard.
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 - User registers or logs in  
 - JWT token is generated  
@@ -192,7 +192,7 @@ Weather data is fetched from **WeatherAPI** and displayed in dashboard.
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - Edit activities functionality  
 - Week vs week analytics  
@@ -203,7 +203,7 @@ Weather data is fetched from **WeatherAPI** and displayed in dashboard.
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 Ena-Esma Toromanović  
 Student project 2026 – NTIP (Napredne tehnike internet programiranja)
