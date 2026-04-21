@@ -72,83 +72,63 @@ The application follows a client-server architecture:
 
 ---
 
-## Project Structure
+## 📁 Project Structure
+
+```bash
 NTIP-main/
-├── client/                     # React frontend
+├── client/
 │   ├── public/
-│   │   ├── index.html
-│   │   ├── ...
-│   │                 
 │   ├── src/
-│   │   
-│   │   ├── App.js              # Root layout, auth state, Header/Footer
+│   │   ├── App.js
 │   │   ├── index.js
-│   │   ├── styles.css          # Tailwind imports, base styles, btn-primary, etc.
+│   │   ├── styles.css
 │   │   ├── components/
-│   │   │   ├── body/Body.js    # Layout wrapper for main content
-│   │   │   ├── footer/Footer.js
-│   │   │   ├──  header/Header.js
-│   │   │   ├──  stats/StatsWidget.js
-│   │   │   ├──  weather/WeatherWidget.js
-│   │   ├── pages/    
-│   │   │   ├── dashboard/Dashboard.js     
-│   │   │   ├── login/Login.js
-│   │   │   ├── register/Register.js
-│   │   │   ├── baby-logs/addBabyLog.js, BabyLog.js, BabyLogs.js, editBabyLog.js
-│   │   │   ├── activities/Activities.js, addActivity.js
-│   │   ├── routes/routesList.js
+│   │   ├── pages/
+│   │   ├── routes/
 │   ├── tailwind.config.js
 │   └── package.json
 │
 ├── server/
-│   ├── server.js               # Entry point, listens on 3001 
-│   ├── config.js               # SECRET_KEY 
-│   ├── uploads/                # Uploaded clothing images
-│   ├── controllers/            # auth, activity, babyLog, stats
+│   ├── server.js
+│   ├── config.js
+│   ├── controllers/
 │   ├── middlewares/
-│   │   ├── authMiddleware.js   # JWT verification
-│   ├── models/                 # activity, babyLog, user
-│   ├── routes/                 # auth, activity, baby-logs, stats
+│   ├── models/
+│   ├── routes/
 │   ├── db/
-│   │   ├── database.js         # SQLite connection
-│   │   └── schemes/ activityScheme.js, babyLogScheme.js, userScheme.js                             # Schema definitions
 │
 └── README.md
+```
 
----
-
-## Installation Guide
-
-### 1. Backend Setup
-
-```bash
+🚀 Installation
+Backend
 cd server
 npm install
 npm start
 
 Server runs on:
-http://localhost:3001
 
-2. Frontend Setup
+http://localhost:3001
+Frontend
 cd client
 npm install
 npm start
 
 Frontend runs on:
+
 http://localhost:3000
+🗄 Database
 
-Database
-
-The application uses SQLite with the following tables:
+SQLite database includes:
 
 users
 baby_logs
 activities
 
-Database is automatically initialized on server startup using schema files.
+Database initializes automatically on server start.
 
-API Overview
-Auth Routes
+🔌 API Overview
+Auth
 POST /api/auth/register
 POST /api/auth/login
 POST /api/auth/verify-token
@@ -163,55 +143,32 @@ POST /api/activities
 DELETE /api/activities/:id
 Stats
 GET /api/stats
-Authentication
+🔐 Authentication Flow
+JWT token generated on login
+Stored in localStorage
+Sent via Authorization: Bearer <token>
+Middleware protects routes
+🌤 External Service
 
-Authentication is implemented using JWT:
+Weather data is fetched from WeatherAPI and displayed in dashboard.
 
-Token is generated on login
-Stored in localStorage on the client
-Sent in request headers as:
-Authorization: Bearer <token>
-Protected routes are secured using authentication middleware
-
-External Services
-Weather API
-
-The application uses WeatherAPI to fetch real-time weather data and display current conditions in the dashboard.
-
-How the System Works
+⚙️ How It Works
 User registers or logs in
-Backend generates JWT token
-Token is stored in localStorage
-User performs actions (baby logs, activities)
-Frontend sends requests with JWT token
-Backend verifies token using middleware
-Data is stored/retrieved from SQLite database
-Statistics are generated from baby logs data
-Weather data is fetched from WeatherAPI and displayed on dashboard
-
-Tutorial Section
-➕ Adding New Features
-Create new route in /routes
-Add logic in /controllers
-Connect to database if needed
-Add frontend page/component
-➕ Adding New API Routes
-Define route in Express
-Attach controller function
-Protect with middleware if needed
-➕ Extending the System
-Add new database tables in schema files
-Extend stats logic for new analytics
-Add new UI widgets in dashboard
-Future Improvements
-Edit functionality for activities
-Better analytics (comparisons week vs week)
-Improved UI responsiveness
-Notifications/reminders system
-Advanced filtering for baby logs
+JWT token is generated
+Token stored in localStorage
+User interacts with app (logs, activities)
+Backend verifies token
+Data stored in SQLite
+Stats generated from logs
+Weather fetched live from API
+🔮 Future Improvements
+Edit activities functionality
+Week vs week analytics
+Better responsive UI
+Notification system
+Advanced filtering
 Deployment (Vercel / Render)
+👩‍💻 Author
 
-
-
-Author
-Ena-Esma Toromanović Student project 2026 – NTIP (Napredne tehnike internet programiranja).
+Ena-Esma Toromanović
+Student project 2026 – NTIP (Napredne tehnike internet programiranja)
