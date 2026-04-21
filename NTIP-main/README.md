@@ -100,75 +100,110 @@ NTIP-main/
 └── README.md
 ```
 
-🚀 Installation
-Backend
+## 🚀 Installation
+
+### Backend
+```bash
 cd server
 npm install
 npm start
+```
 
 Server runs on:
-
+```
 http://localhost:3001
-Frontend
+```
+
+---
+
+### Frontend
+```bash
 cd client
 npm install
 npm start
+```
 
 Frontend runs on:
-
+```
 http://localhost:3000
-🗄 Database
+```
+
+---
+
+## 🗄 Database
 
 SQLite database includes:
-
-users
-baby_logs
-activities
+- users
+- baby_logs
+- activities
 
 Database initializes automatically on server start.
 
-🔌 API Overview
-Auth
-POST /api/auth/register
-POST /api/auth/login
-POST /api/auth/verify-token
-Baby Logs
-GET /api/baby-logs
-POST /api/baby-logs
-PUT /api/baby-logs/:id
-DELETE /api/baby-logs/:id
-Activities
-GET /api/activities
-POST /api/activities
-DELETE /api/activities/:id
-Stats
-GET /api/stats
-🔐 Authentication Flow
-JWT token generated on login
-Stored in localStorage
-Sent via Authorization: Bearer <token>
-Middleware protects routes
-🌤 External Service
+---
 
-Weather data is fetched from WeatherAPI and displayed in dashboard.
+## 🔌 API Overview
 
-⚙️ How It Works
-User registers or logs in
-JWT token is generated
-Token stored in localStorage
-User interacts with app (logs, activities)
-Backend verifies token
-Data stored in SQLite
-Stats generated from logs
-Weather fetched live from API
-🔮 Future Improvements
-Edit activities functionality
-Week vs week analytics
-Better responsive UI
-Notification system
-Advanced filtering
-Deployment (Vercel / Render)
-👩‍💻 Author
+### Auth
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `POST /api/auth/verify-token`
 
-Ena-Esma Toromanović
+### Baby Logs
+- `GET /api/baby-logs`
+- `POST /api/baby-logs`
+- `PUT /api/baby-logs/:id`
+- `DELETE /api/baby-logs/:id`
+
+### Activities
+- `GET /api/activities`
+- `POST /api/activities`
+- `DELETE /api/activities/:id`
+
+### Stats
+- `GET /api/stats`
+
+---
+
+## 🔐 Authentication Flow
+
+- JWT token generated on login  
+- Stored in `localStorage`  
+- Sent via `Authorization: Bearer <token>`  
+- Middleware protects routes  
+
+---
+
+## 🌤 External Service
+
+Weather data is fetched from **WeatherAPI** and displayed in dashboard.
+
+---
+
+## ⚙️ How It Works
+
+- User registers or logs in  
+- JWT token is generated  
+- Token stored in localStorage  
+- User interacts with app (logs, activities)  
+- Backend verifies token  
+- Data stored in SQLite  
+- Stats generated from logs  
+- Weather fetched live from API  
+
+---
+
+## 🔮 Future Improvements
+
+- Edit activities functionality  
+- Week vs week analytics  
+- Better responsive UI  
+- Notification system  
+- Advanced filtering  
+- Deployment (Vercel / Render)  
+
+---
+
+## 👩‍💻 Author
+
+Ena-Esma Toromanović  
 Student project 2026 – NTIP (Napredne tehnike internet programiranja)
